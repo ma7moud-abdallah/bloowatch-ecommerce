@@ -4,13 +4,14 @@ import { XIcon } from '@heroicons/react/outline'
 import { ChevronDownIcon, FilterIcon } from '@heroicons/react/solid'
 import ProductList from './ProductList'
 import { useDispatch } from 'react-redux'
-import { sortProducts } from '../redux/storeReducer'
+import { sortProducts } from '../redux/productsReducer'
 import Filters from './Filters'
+import { ISortOptions } from './dashboard.interface'
 
 
-const sortOptions = [
-    { name: 'Price: Low to High', href: '#', current: false, value: 'price', sortOrder: 'ascending' },
-    { name: 'Price: High to Low', href: '#', current: false, value: 'price', sortOrder: 'descending' },
+const sortOptions: ISortOptions[] = [
+    { name: 'Price: Low to High', current: false, value: 'price', sortOrder: 'ascending' },
+    { name: 'Price: High to Low', current: false, value: 'price', sortOrder: 'descending' },
   ]
 
 
@@ -22,7 +23,7 @@ function Dashboard() {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
     const dispatch = useDispatch();
 
-    const handleSort = (option: any) => {
+    const handleSort = (option: ISortOptions) => {
        dispatch(sortProducts(option))
     }
   return (
@@ -101,7 +102,7 @@ function Dashboard() {
                 >
                   <Menu.Items className="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-2xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">
-                      {sortOptions.map((option: any) => {
+                      {sortOptions.map((option: ISortOptions) => {
                        const sort = () => handleSort(option);
                        return( <Menu.Item  
                         key={option.name}>

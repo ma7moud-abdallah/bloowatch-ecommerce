@@ -4,7 +4,7 @@ import { EditProductQty, removeProductFromCart } from "../redux/cartReducer";
 
 const Cart = () => {
   const storeData: any = useSelector((state) => state);
-  const { products, cost, shipping } = storeData.cart;
+  const { products, cost, shippingCost } = storeData.cart;
   const dispatch = useDispatch();
   
   const editQty = (quantity: number, id: string) => {
@@ -59,13 +59,13 @@ const Cart = () => {
             </div>
             <div className="flex items-center justify-between pt-5">
               <p className="text-base leading-none text-gray-800 dark:text-white">Shipping</p>
-              <p className="text-base leading-none text-gray-800 dark:text-white">{products.length ? shipping : 0}</p>
+              <p className="text-base leading-none text-gray-800 dark:text-white">{products.length ? shippingCost : 0}</p>
             </div>
           </div>
           <div>
             <div className="flex items-center justify-between pt-2">
               <p className="text-2xl leading-normal text-gray-800 dark:text-white">Total</p>
-              <p className="text-2xl font-bold leading-normal text-right text-gray-800 dark:text-white">{cost ? cost + shipping : 0}</p>
+              <p className="text-2xl font-bold leading-normal text-right text-gray-800 dark:text-white">{cost ? cost + shippingCost : 0}</p>
             </div>
             <button  className="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white dark:hover:bg-gray-700">Checkout</button>
           </div>

@@ -4,7 +4,7 @@ import { render as rtlRender } from '@testing-library/react'
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 // Import your own reducer
-import storeReducer from './redux/storeReducer'
+import storeReducer from './redux/productsReducer'
 import cartReducer from './redux/cartReducer'
 import { BrowserRouter } from 'react-router-dom'
 

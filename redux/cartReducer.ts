@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IProduct } from "../components/product.interface";
+import { ICart } from "./cart.interface";
 
-const initialState: any = {
+const initialState: ICart = {
   products: [],
   cost: 0,
-  shipping: 30
+  shippingCost: 30.5
 };
 
 export const counterSlice = createSlice({

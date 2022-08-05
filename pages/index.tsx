@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Header from '../components/Header'
 import { IProduct } from '../components/product.interface'
-import { setproducts } from '../redux/storeReducer'
+import { setproducts } from '../redux/productsReducer'
 import styles from '../styles/Home.module.css'
 import Dashboard from '../components/Dashboard'
 

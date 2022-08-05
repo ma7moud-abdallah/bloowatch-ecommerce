@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { filterByCategory, removeCategory, searchProduct } from '../redux/storeReducer';
+import { filterByCategory, removeCategory, searchProduct } from '../redux/productsReducer';
 
   const filters = {
       id: 'category',

@@ -2,7 +2,7 @@ export interface IProduct {
     id: string;
     name: string;
     description: string;
-    price: any;
+    price: Float32Array;
     discount?: number;
     seller: string;
     sellerHref: string;
